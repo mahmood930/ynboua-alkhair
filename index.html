@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Tahoma", Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+        header {
+            background: #0b7eb3;
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        header .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        header img.logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid white;
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .lang-btn.active {
+            background: white;
+            color: #0b7eb3;
+        }
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #0b7eb3, #4fb8d8);
+            color: white;
+        }
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            line-height: 1.7;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: white;
+            color: #0b7eb3;
+        }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+        }
+        .section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #0b7eb3;
+            font-size: 20px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .card h4 {
+            margin-top: 0;
+            color: #0b7eb3;
+        }
+        footer {
+            background: #222;
+            color: #ddd;
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        ul {
+            padding-right: 20px;
+        }
+        @media (max-width: 600px) {
+            header .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header .logo-title {
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+            nav {
+                text-align: center;
+                width: 100%;
+            }
+            .lang-switch {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+        .lang-section[dir="ltr"] {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-bar">
+        <div class="logo-title">
+            <!-- ضع شعار منظمتك داخل نفس المجلد باسم logo.png -->
+            <img src="logo.png" alt="شعار منظمة ينبوع الخير" class="logo">
+            <h1>منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة</h1>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn active" id="btn-ar" onclick="setLanguage('ar')">عربي</button>
+            <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">English</button>
+        </div>
+    </div>
+
+    <nav id="nav-ar">
+        <a href="#about-ar">من نحن</a>
+        <a href="#vision-ar">الرؤية والرسالة</a>
+        <a href="#programs-ar">برامجنا</a>
+        <a href="#join-ar">انضم إلينا</a>
+        <a href="#contact-ar">تواصل معنا</a>
+    </nav>
+    <nav id="nav-en" style="display:none;">
+        <a href="#about-en">About</a>
+        <a href="#vision-en">Vision & Mission</a>
+        <a href="#programs-en">Programs</a>
+        <a href="#join-en">Join Us</a>
+        <a href="#contact-en">Contact</a>
+    </nav>
+</header>
+
+<!-- النسخة العربية -->
+<div id="lang-ar" class="lang-section active" dir="rtl">
+
+    <section class="hero">
+        <h2>ينبوع خير يصل إلى كل المدن والمحافظات العراقية</h2>
+        <p>
+            منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة،
+            تعمل لخدمة الإنسان، ودعم الفئات الهشة، وتنفيذ مشاريع تنموية
+            تسهم في تحقيق حياة كريمة ومستقبل أفضل في جميع أنحاء العراق.
+        </p>
+        <div class="buttons">
+            <a href="#about-ar" class="btn btn-primary">تعرف على منظمتنا</a>
+            <a href="#join-ar" class="btn btn-outline">انضم إلى فريق المتطوعين</a>
+        </div>
+    </section>
+
+    <section class="section" id="about-ar">
+        <h3>من نحن</h3>
+        <p>
+            منظمة مدنية غير ربحية تعمل وفق مبادئ الإنسانية والحياد والاستقلالية،
+            وتهدف إلى خدمة الإنسان دون تمييز على أساس الجنس أو الدين أو القومية أو الانتماء.
+        </p>
+        <p>
+            تسعى منظمة ينبوع الخير إلى دعم ومساندة الفئات الهشة، وتمكين الشباب والنساء،
+            وتنفيذ برامج تنموية تعزز الاستقرار المجتمعي وتدعم بناء مجتمع قادر على مواجهة
+            التحديات الاقتصادية والبيئية في جميع المدن والمحافظات العراقية.
+        </p>
+    </section>
+
+    <section class="section" id="vision-ar">
+        <h3>الرؤية والرسالة والأهداف</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>الرؤية</h4>
+                <p>
+                    أن تكون منظمة ينبوع الخير نموذجاً رائداً في العمل الإنساني والتنموي في العراق،
+                    وتساهم بفاعلية في تحسين جودة الحياة ونشر ثقافة التنمية المستدامة في جميع المدن العراقية.
+                </p>
+            </div>
+            <div class="card">
+                <h4>الرسالة</h4>
+                <p>
+                    تقديم مساعدات إنسانية فعّالة وتنفيذ برامج تنموية تستهدف الفئات الهشة والأسر ذات الدخل المحدود،
+                    مع التركيز على تمكين الإنسان وبناء قدراته وتعزيز صموده أمام التحديات الاقتصادية والاجتماعية والبيئية.
+                </p>
+            </div>
+            <div class="card">
+                <h4>الأهداف</h4>
+                <ul>
+                    <li>تقديم المساعدات الإنسانية والإغاثية للأسر الأكثر احتياجاً.</li>
+                    <li>دعم وتمويل المشاريع الصغيرة ومتناهية الصغر لتمكين الأسر من سبل عيش مستدامة.</li>
+                    <li>تمكين الشباب والنساء من خلال برامج تدريبية وبناء القدرات.</li>
+                    <li>تعزيز الوعي المجتمعي بقضايا التنمية المستدامة والتغيير المناخي.</li>
+                    <li>نشر ثقافة التطوع والمسؤولية المجتمعية في جميع المدن العراقية.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="programs-ar">
+        <h3>برامجنا ومجالات عملنا</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>برنامج المساعدات الإنسانية والإغاثة</h4>
+                <p>
+                    يستهدف الأسر المتعففة وذوي الدخل المحدود عبر توزيع السلال الغذائية،
+                    وتقديم بعض المساعدات الصحية والدوائية، والتدخل السريع في حالات الطوارئ.
+                </p>
+            </div>
+            <div class="card">
+                <h4>برنامج التنمية المستدامة وسبل العيش</h4>
+                <p>
+                    يركّز على دعم المشاريع الصغيرة ومتناهية الصغر، وتدريب الأفراد على المهارات المهنية
+                    والحرفية، وتشجيع المبادرات الإنتاجية المجتمعية لخلق مصادر دخل مستدامة.
+                </p>
+            </div>
+            <div class="card">
+                <h4>برنامج تمكين الشباب والنساء</h4>
+                <p>
+                    يتضمن تنظيم دورات وورش تدريبية في المهارات الحياتية والقيادية وريادة الأعمال،
+                    ودعم المبادرات الشبابية التطوعية، وتعزيز مشاركة النساء في العمل المجتمعي والاقتصادي.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="join-ar">
+        <h3>انضم إلينا</h3>
+        <p>
+            إذا كنت تؤمن بقيم الإنسانية وترغب بالمساهمة في خدمة مجتمعك،
+            ندعوك للانضمام إلى فريق منظمة ينبوع الخير من متطوعين وأعضاء،
+            والمشاركة في حملاتنا وأنشطتنا في مختلف المدن العراقية.
+        </p>
+        <p>
+            ◀ لتعبئة استمارة الانضمام، اضغط على الرابط التالي:
+        </p>
+        <!-- ضع هنا رابط استمارة الانضمام الحقيقية (Google Forms أو غيرها) -->
+        <p><a href="#" style="color:#0b7eb3; font-weight:bold;">استمارة الانضمام إلى منظمة ينبوع الخير</a></p>
+    </section>
+
+    <section class="section" id="contact-ar">
+        <h3>تواصل معنا</h3>
+        <p>يسعدنا تواصلكم معنا للاستفسار أو الشراكة أو تقديم المقترحات:</p>
+        <ul>
+            <li>📞 الهاتف: 07906662566</li>
+            <li>✉️ البريد الإلكتروني: <a href="mailto:ynboaaalkher@gmail.com">ynboaaalkher@gmail.com</a></li>
+            <li>🌐 فيسبوك: <a href="#" target="_blank">صفحة منظمة ينبوع الخير</a></li>
+            <li>📌 نطاق العمل: جميع المدن والمحافظات العراقية</li>
+        </ul>
+    </section>
+
+</div>
+
+<!-- English Version -->
+<div id="lang-en" class="lang-section" dir="ltr">
+
+    <section class="hero">
+        <h2>A Spring of Goodness for All Iraqi Cities</h2>
+        <p>
+            Yanboua Al-Khair Organization for Humanitarian Aid and Sustainable Development
+            works to serve people, support vulnerable groups, and implement development projects
+            that contribute to a decent life and a better future across all Iraqi cities and governorates.
+        </p>
+        <div class="buttons">
+            <a href="#about-en" class="btn btn-primary">Learn About Us</a>
+            <a href="#join-en" class="btn btn-outline">Join Our Volunteers</a>
+        </div>
+    </section>
+
+    <section class="section" id="about-en">
+        <h3>Who We Are</h3>
+        <p>
+            Yanboua Al-Khair Organization is a non-profit civil organization that operates according
+            to the principles of humanity, neutrality, and independence. The organization aims to
+            serve people without discrimination based on gender, religion, ethnicity, or affiliation.
+        </p>
+        <p>
+            The organization supports vulnerable groups, empowers youth and women, and implements
+            development programs that enhance social stability and help build resilient communities
+            across all Iraqi cities and governorates.
+        </p>
+    </section>
+
+    <section class="section" id="vision-en">
+        <h3>Vision, Mission & Goals</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>Vision</h4>
+                <p>
+                    To be a leading humanitarian and development organization in Iraq, actively contributing
+                    to improving quality of life and promoting a culture of sustainable development across
+                    all Iraqi cities.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Mission</h4>
+                <p>
+                    To provide effective humanitarian assistance and implement development programs targeting
+                    vulnerable groups and low-income families, with a focus on empowering people, building their
+                    capacities, and strengthening their resilience to economic, social, and environmental challenges.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Goals</h4>
+                <ul>
+                    <li>Provide humanitarian and relief assistance to the most vulnerable families.</li>
+                    <li>Support and fund small and micro projects for sustainable livelihoods.</li>
+                    <li>Empower youth and women through training and capacity building.</li>
+                    <li>Raise community awareness on sustainable development and climate change.</li>
+                    <li>Promote a culture of volunteering and social responsibility across Iraq.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="programs-en">
+        <h3>Our Programs & Fields of Work</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>Humanitarian Assistance & Relief Program</h4>
+                <p>
+                    Targets vulnerable and low-income families by providing food baskets, limited health
+                    and medical support, and rapid response in emergencies.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Sustainable Development & Livelihoods Program</h4>
+                <p>
+                    Focuses on supporting small and micro income-generating projects, providing vocational
+                    and professional training, and encouraging productive community initiatives.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Youth & Women Empowerment Program</h4>
+                <p>
+                    Organizes training workshops in life skills, leadership, and entrepreneurship, and
+                    supports youth-led volunteer and community initiatives, while enhancing women's participation
+                    in community and economic life.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="join-en">
+        <h3>Join Us</h3>
+        <p>
+            If you believe in humanitarian values and want to contribute to serving your community,
+            we invite you to join Yanboua Al-Khair Organization as a volunteer or member and participate
+            in our campaigns and activities across Iraq.
+        </p>
+        <p>
+            ◀ To fill in the membership / volunteering form, please click the link below:
+        </p>
+        <p><a href="#" style="color:#0b7eb3; font-weight:bold;">Yanboua Al-Khair Membership & Volunteering Form</a></p>
+    </section>
+
+    <section class="section" id="contact-en">
+        <h3>Contact Us</h3>
+        <p>We are happy to hear from you for inquiries, partnerships, or suggestions:</p>
+        <ul>
+            <li>📞 Phone: 07906662566</li>
+            <li>✉️ Email: <a href="mailto:ynboaaalkher@gmail.com">ynboaaalkher@gmail.com</a></li>
+            <li>🌐 Facebook: <a href="#" target="_blank">Yanboua Al-Khair Organization Page</a></li>
+            <li>📌 Area of Work: All Iraqi cities and governorates</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    جميع الحقوق محفوظة &copy; منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة
+    <br>
+    All rights reserved &copy; Yanboua Al-Khair Organization for Humanitarian Aid and Sustainable Development
+</footer>
+
+<script>
+    function setLanguage(lang) {
+        var arSection = document.getElementById('lang-ar');
+        var enSection = document.getElementById('lang-en');
+        var navAr = document.getElementById('nav-ar');
+        var navEn = document.getElementById('nav-en');
+        var btnAr = document.getElementById('btn-ar');
+        var btnEn = document.getElementById('btn-en');
+
+        if (lang === 'ar') {
+            arSection.classList.add('active');
+            enSection.classList.remove('active');
+            navAr.style.display = 'block';
+            navEn.style.display = 'none';
+            btnAr.classList.add('active');
+            btnEn.classList.remove('active');
+            document.documentElement.lang = 'ar';
+            document.documentElement.dir = 'rtl';
+        } else {
+            enSection.classList.add('active');
+            arSection.classList.remove('active');
+            navEn.style.display = 'block';
+            navAr.style.display = 'none';
+            btnEn.classList.add('active');
+            btnAr.classList.remove('active');
+            document.documentElement.lang = 'en';
+            document.documentElement.dir = 'ltr';
+        }
+    }
+</script>
+
+</body>
+</html>
