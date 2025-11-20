@@ -1,11 +1,198 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>صفحة الأخبار</title>
+    <meta charset="UTF-8">
+    <title>الأخبار والنشاطات - منظمة ينبوع الخير</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Tahoma", Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+        header {
+            background: #0b7eb3;
+            color: white;
+            padding: 15px 20px;
+        }
+        header .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        header .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        header img.logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: white;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+        header small {
+            font-size: 12px;
+            display: block;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            padding: 30px 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #0b7eb3;
+            font-size: 22px;
+        }
+        .news-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .news-card h3 {
+            margin-top: 0;
+            color: #0b7eb3;
+            font-size: 18px;
+        }
+        .news-card small {
+            color: #777;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .news-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .back-link {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .back-link a {
+            color: #0b7eb3;
+            text-decoration: none;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background: #222;
+            color: #ddd;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 30px;
+        }
+        @media (max-width: 600px) {
+            header .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header .logo-title {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>هذه صفحة الأخبار وهي تعمل بنجاح ✔️</h1>
-<p>سيتم إضافة المحتوى لاحقاً.</p>
+
+<header>
+    <div class="top-bar">
+        <div class="logo-title">
+            <!-- نفس شعار الموقع الرئيسي -->
+            <img src="logo.png" alt="شعار منظمة ينبوع الخير" class="logo">
+            <div>
+                <h1>منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة</h1>
+                <small>صفحة الأخبار والنشاطات</small>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="news.html">الأخبار</a>
+        </nav>
+    </div>
+</header>
+
+<section class="section">
+    <h2>آخر الأخبار والنشاطات</h2>
+
+    <p class="back-link">
+        <a href="index.html">&larr; الرجوع إلى الصفحة الرئيسية</a>
+    </p>
+
+    <div class="news-list">
+        <!-- نموذج خبر 1 -->
+        <div class="news-card">
+            <!-- إذا رفعت صورة للخبر، استعمل السطر التالي وغير اسم الصورة -->
+            <!-- <img src="news1.jpg" alt="صورة الخبر الأول"> -->
+            <h3>تنفيذ حملة توزيع سلال غذائية للأسر المتعففة</h3>
+            <small>التاريخ: 2025-01-20 – المكان: محافظة الأنبار</small>
+            <p>
+                نفذت منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة حملة لتوزيع السلال الغذائية
+                على عدد من الأسر المتعففة في محافظة الأنبار، ضمن برنامج المساعدات الإنسانية الذي يستهدف
+                دعم الفئات الأكثر هشاشة في جميع المدن العراقية.
+            </p>
+        </div>
+
+        <!-- نموذج خبر 2 -->
+        <div class="news-card">
+            <h3>ورشة تدريبية حول التمكين الاقتصادي للشباب</h3>
+            <small>التاريخ: 2025-01-25 – المكان: بغداد</small>
+            <p>
+                أقامت المنظمة ورشة تدريبية متخصصة في مجال التمكين الاقتصادي وريادة الأعمال للشباب،
+                بمشاركة مجموعة من الناشطين والمهتمين، بهدف تعزيز قدراتهم على إنشاء مشاريع صغيرة
+                تسهم في تحسين سبل العيش.
+            </p>
+        </div>
+
+        <!-- نموذج خبر 3 -->
+        <div class="news-card">
+            <h3>نشاط توعوي حول التغير المناخي وأثره على المجتمع</h3>
+            <small>التاريخ: 2025-02-01 – المكان: أربيل</small>
+            <p>
+                ضمن برامج التوعية البيئية، نظمت منظمة ينبوع الخير جلسة حوارية حول التغير المناخي
+                وتأثيره على الموارد الطبيعية وحياة الأفراد، مع التأكيد على أهمية الممارسات الصديقة
+                للبيئة وترشيد استهلاك الماء والطاقة.
+            </p>
+        </div>
+    </div>
+
+    <p style="margin-top:25px; font-size:13px; color:#555;">
+        لإضافة خبر جديد لاحقاً: انسخ أحد المربعات (div class="news-card")، والصقه أسفله،
+        ثم عدّل العنوان، التاريخ، المكان، ونص الخبر بما يتناسب مع نشاط منظمتك.
+    </p>
+</section>
+
+<footer>
+    جميع الحقوق محفوظة &copy; منظمة ينبوع الخير للمساعدات الإنسانية والتنمية المستدامة
+</footer>
+
 </body>
 </html>
